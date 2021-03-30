@@ -1,0 +1,42 @@
+<footer class="hidden-print">
+  <div class="footer-container">
+    <div class="footer-column">
+      <?php $this->slot('footer-left')->start(); ?>
+      <a class="footer-brand lang-<?=$this->layout()->userLang ?>" href="<?=$this->url('home')?>">
+    <img class='footer-logo-img' src="<?=$this -> imageLink('logo_podklad_czarny_nazwa.jpg'); ?> "alt=" Literary Bibliography Research Infrastructure"/>
+    </a>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  
+      <?=$this->slot('footer-left')->end(); ?>
+    </div>
+    <div class="footer-column">
+      <?php $this->slot('footer-center')->start(); ?>
+        <h2><?=$this->transEsc('Search Options')?></h2>
+        <ul>
+          <li><a href="<?=$this->url('browse-home')?>"><?=$this->transEsc('Browse the Catalog')?></a></li>
+          <li><a href="<?=$this->url('alphabrowse-home')?>"><?=$this->transEsc('Browse Alphabetically')?></a></li>
+          <li><a href="<?=$this->url('search-history')?>"><?=$this->transEsc('Search History')?></a></li>
+          <li><a href="<?=$this->url('search-advanced')?>"><?=$this->transEsc('Advanced Search')?></a></li>
+          <!-- <li><a href="<?=$this->url('search-reserves')?>"><?=$this->transEsc('Course Reserves')?></a></li>
+          <li><a href="<?=$this->url('search-newitem')?>"><?=$this->transEsc('New Items')?></a></li> -->
+        </ul>
+      <?=$this->slot('footer-center')->end(); ?>
+    </div>
+    <div class="footer-column">
+      <?php $this->slot('footer-right')->start(); ?>
+        <h2><?=$this->transEsc('Need Help?')?></h2>
+        <ul>
+          <li><a href="<?=$this->url('help-home')?>?topic=search&amp;_=<?=time() ?>" data-lightbox class="help-link"><?=$this->transEsc('Search Tips')?></a></li>
+          <!-- <li><a href="<?=$this->url('content-page', ['page' => 'asklibrary']) ?>"><?=$this->transEsc('Ask a Librarian')?></a></li> -->
+          <li><a href="<?=$this->url('content-page', ['page' => 'faq']) ?>"><?=$this->transEsc('FAQs')?></a></li>
+        </ul>
+      <?=$this->slot('footer-right')->end(); ?>
+    </div>
+  </div>
+  <div class="poweredby">
+    <?=$this->layout()->poweredBy ?>
+  </div>
+</footer>
